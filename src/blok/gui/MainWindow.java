@@ -5,8 +5,10 @@
 package blok.gui;
 
 import blok.interfaces.IControlerSimulator;
+import blok.interfaces.IFabricaSimulator;
 import blok.interfaces.ISimulator;
 import blok.interfaces.IThemes;
+import blok.simulator.FabricaSimulator;
 import blok.simulator.Simulator;
 import blok.simulator.Simulator3D;
 import blok.themes.MainPanel;
@@ -37,20 +39,35 @@ public class MainWindow extends javax.swing.JFrame implements IControlerSimulato
     public MainWindow() {
         initComponents();
         Dimension size = new Dimension(1000, 600);
-
-        IThemes mainPanel = new MainPanel();
+        
+        IFabricaSimulator fabrica = new FabricaSimulator();
+        IThemes mainPanel =fabrica.createThemes();
+       
+        ((JComponent) mainPanel).setPreferredSize(size);
         ((JComponent) mainPanel).setPreferredSize(size);
         ((Component) mainPanel).setMinimumSize(size);
         ((Component) mainPanel).setMaximumSize(size);
         ((Component) mainPanel).setSize(size);
         setContentPane((Container) mainPanel);
 
+     /*   IThemes mainPanel = new MainPanel();
+        ((JComponent) mainPanel).setPreferredSize(size);
+        ((Component) mainPanel).setMinimumSize(size);
+        ((Component) mainPanel).setMaximumSize(size);
+        ((Component) mainPanel).setSize(size);
+        setContentPane((Container) mainPanel);*/
+
         setResizable(false);
         pack();
         
-        ISimulator simulator = new Simulator((MainPanel) mainPanel);
+       
+        ISimulator simulator = fabrica.createSimulator(mainPanel);
         mainPanel.setSimulator(simulator);
         simulator.init();
+        
+      /*  ISimulator simulator = new Simulator((MainPanel) mainPanel);
+        mainPanel.setSimulator(simulator);
+        simulator.init();*/
        //simulator.start();
     }
 

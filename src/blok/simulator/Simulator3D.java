@@ -3,14 +3,15 @@ package blok.simulator;
 import org.jbox2d.dynamics.Body;
 
 import blok.interfaces.ISimulator;
+import blok.interfaces.IThemes;
 import blok.themes.MainPanel;
 
 public class Simulator3D implements ISimulator {
 	
 	
-	private MainPanel m_mainPanel;
+	private IThemes m_mainPanel;
 	
-	public Simulator3D(MainPanel m_mainPanel) {
+	public Simulator3D(IThemes m_mainPanel) {
 		this.m_mainPanel = m_mainPanel;
 	}
 

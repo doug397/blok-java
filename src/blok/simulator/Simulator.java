@@ -27,7 +27,7 @@ import org.jbox2d.dynamics.contacts.Contact;
  */
 public class Simulator implements ISimulator,  ContactListener {
 
-    public Simulator(MainPanel mainPanel) {
+    public Simulator(IThemes mainPanel) {
         m_mainPanel = mainPanel;
     }
     @Override

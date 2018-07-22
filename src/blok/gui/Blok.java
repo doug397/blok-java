@@ -22,7 +22,7 @@ public class Blok {
             @Override
             public void run() {
             	IControlerSimulator mainWindow = new MainWindow();
-                ((Window) mainWindow).setVisible(true);
+                ( (Window) mainWindow).setVisible(true);
             }
         });
     }
