@@ -4,8 +4,9 @@
  */
 package blok.simulator;
 
-import blok.gui.MainPanel;
 import blok.interfaces.ISimulator;
+import blok.interfaces.IThemes;
+import blok.themes.MainPanel;
 
 import java.util.ArrayList;
 import java.util.concurrent.Executors;
@@ -93,7 +94,7 @@ public class Simulator implements ISimulator,  ContactListener {
         if (m_bodies.size() == 2)
         {
             stop();
-            m_mainPanel.setState(MainPanel.State.YOUWON);
+            ((MainPanel) m_mainPanel).setState(MainPanel.State.YOUWON);
         }
     }
 
@@ -103,7 +104,7 @@ public class Simulator implements ISimulator,  ContactListener {
             (contact.getFixtureB().getBody() == m_ground && contact.getFixtureA().getBody() == m_player))
         {
             stop();
-            m_mainPanel.setState(MainPanel.State.YOULOST);
+            ((MainPanel) m_mainPanel).setState(MainPanel.State.YOULOST);
         }
     }
 
@@ -124,7 +125,7 @@ public class Simulator implements ISimulator,  ContactListener {
     private static int B2_VELOCITY_ITERATIONS = 8;
     private static int B2_POSITION_ITERATIONS = 4;
 
-    private MainPanel m_mainPanel;
+    private IThemes m_mainPanel;
     
     private final ScheduledExecutorService m_scheduler = Executors.newScheduledThreadPool(1);
     private ScheduledFuture<?> m_schedulerHandle = null;

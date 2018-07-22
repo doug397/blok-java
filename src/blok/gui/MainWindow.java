@@ -4,20 +4,24 @@
  */
 package blok.gui;
 
+import blok.interfaces.IControlerSimulator;
 import blok.interfaces.ISimulator;
 import blok.interfaces.IThemes;
 import blok.simulator.Simulator;
 import blok.simulator.Simulator3D;
+import blok.themes.MainPanel;
 
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 
+import javax.swing.JComponent;
+
 /**
  *
  * @author sandroandrade
  */
-public class MainWindow extends javax.swing.JFrame {
+public class MainWindow extends javax.swing.JFrame implements IControlerSimulator {
 	
 	   // Variables declaration - do not modify//GEN-BEGIN:variables
   
@@ -35,7 +39,7 @@ public class MainWindow extends javax.swing.JFrame {
         Dimension size = new Dimension(1000, 600);
 
         IThemes mainPanel = new MainPanel();
-        ((Component) mainPanel).setPreferredSize(size);
+        ((JComponent) mainPanel).setPreferredSize(size);
         ((Component) mainPanel).setMinimumSize(size);
         ((Component) mainPanel).setMaximumSize(size);
         ((Component) mainPanel).setSize(size);
@@ -47,7 +51,7 @@ public class MainWindow extends javax.swing.JFrame {
         ISimulator simulator = new Simulator((MainPanel) mainPanel);
         mainPanel.setSimulator(simulator);
         simulator.init();
-       // simulator.start();
+       //simulator.start();
     }
 
     /**
@@ -57,7 +61,7 @@ public class MainWindow extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();

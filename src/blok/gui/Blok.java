@@ -4,6 +4,10 @@
  */
 package blok.gui;
 
+import java.awt.Window;
+
+import blok.interfaces.IControlerSimulator;
+
 /**
  *
  * @author sandroandrade
@@ -17,8 +21,8 @@ public class Blok {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.setVisible(true);
+            	IControlerSimulator mainWindow = new MainWindow();
+                ((Window) mainWindow).setVisible(true);
             }
         });
     }

@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package blok.gui;
+package blok.themes;
 
 import blok.interfaces.ISimulator;
 import blok.interfaces.IThemes;

@@ -2,8 +2,8 @@ package blok.simulator;
 
 import org.jbox2d.dynamics.Body;
 
-import blok.gui.MainPanel;
 import blok.interfaces.ISimulator;
+import blok.themes.MainPanel;
 
 public class Simulator3D implements ISimulator {
 	
