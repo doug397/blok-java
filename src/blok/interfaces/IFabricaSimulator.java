@@ -4,6 +4,6 @@ public interface IFabricaSimulator {
 
 	ISimulator createSimulator(IThemes tema);
 	
-	IThemes createThemes();
+	//IThemes createThemes();
 	
 }

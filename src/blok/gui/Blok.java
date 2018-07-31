@@ -6,7 +6,10 @@ package blok.gui;
 
 import java.awt.Window;
 
-import blok.interfaces.IControlerSimulator;
+import block.core.Core;
+import block.core.MainWindowControler;
+import blok.interfaces.ICore;
+import blok.interfaces.IUIControler;
 
 /**
  *
@@ -21,9 +24,15 @@ public class Blok {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-            	IControlerSimulator mainWindow = new MainWindow();
-                ( (Window) mainWindow).setVisible(true);
+               
+             	IUIControler mainWindow = new MainWindowControler(2);
+                
+                ICore core  = new Core(mainWindow);
+            	 
+              //  ICore core  = new Core();
+                core.initGame();
             }
+            
         });
     }
 }
